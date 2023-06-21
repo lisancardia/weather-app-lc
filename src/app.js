@@ -8,6 +8,7 @@ function formatDate(timestamp) {
     if (minutes < 10) {
         minutes = `0${minutes}`;
     }
+    let days = [
         "Sunday",
         "Monday", 
         "Tuesday", 
@@ -35,7 +36,8 @@ function displayTemperature(response) {
 }
 
 let apiKey = "7784a4cd4aa2e0c25ead7bd96d585b8a";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+let city = "New York";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
 
